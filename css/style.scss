@@ -1,0 +1,401 @@
+@import '_variable.scss';
+$i:10;
+*{
+    margin: 0;
+    padding:  0;
+    font-family: 'Rubik', sans-serif;
+}
+
+header{
+    &::before{
+        background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%) ;
+        animation: OpacityAnim 3s ease-in-out 0s infinite alternate;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+    }
+    &::after{
+        background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%) ;
+                animation: OpacityAnim 3s ease-in-out calc(-1 * 2s) infinite alternate;
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+    }
+    opacity: 0.8;
+    @keyframes OpacityAnim {
+        0%{opacity: 1.0}
+        100%{opacity: 0.0}
+    }
+    background: rgba(149,176,249,1);
+    height: 100vh;
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 120px);
+        padding: 50px 60px;
+        color: white;
+        position: absolute;
+        z-index: 5555;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .menu{
+            a{
+                margin-right: 10px;
+            }
+        }
+    }
+    .title{
+        height: 100vh;
+        display: flex;
+        justify-content:center;
+        align-items: flex-start;
+        flex-direction: column;
+        h1{
+            margin-left: 10vw;
+            color: white;
+            font-size: 4rem;
+            font-weight: 700;
+            &::before{
+                content: url(../img/white_stripes.svg);
+                width: 11vw;
+                position: absolute;
+                left: 85px;
+            }
+        }
+        h5{
+            color: white;
+            margin-left: 10vw;
+            padding-top: 10px;
+        }
+        .div-animation{
+            position:absolute;
+            top:16vh;
+            right:5rem;
+
+        }
+        .av{
+            position: absolute;
+            color: white;
+            bottom: 5%;
+            left: 4vw;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            &::before{
+                content:"o";
+                color: white;
+            }
+        }
+        .big-stripes {
+            position: absolute;
+            width: 250px;
+            z-index: 0;
+            right: 0px;
+            bottom: 0px;
+            opacity: .7;
+        }
+    }
+    .hero-cube {
+        position: absolute;
+        top: 28%;
+        right: 6%;
+        transform: rotate(0deg);
+        z-index: 0;
+        transition: all .5s ease;
+        .hero-picture{
+            width: 50%;
+        }
+    }
+    .hero-cube-2 {
+        position: absolute;
+        top: 58%;
+        right: -10%;
+        z-index: 0;
+        .hero-picture-2{
+            width: 50%;
+        }
+    }
+}
+.hey{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0vw;
+    grid-template-areas:". .";
+    color: $dark_blue;
+    height: 100vh;
+    .light_blue{
+        color: $light-blue;
+        font-weight: bold;
+    }
+    .img{
+        padding: 2vw;
+        .strips{
+            position: relative;
+            top: -23vh;
+            width: 15vw;
+            z-index: -55;
+            left: 6vw;
+        }
+        .cvImg{
+            width: 23vw;
+            position: relative;
+            top: 26vh;
+            z-index: 555;
+        }
+    }
+    .txt{
+        padding: 2vw;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        h1{
+            padding-bottom: 20px;
+            font-size: 4rem;
+            &::before{
+                content: url(../img/stripes.svg);
+                position: relative;
+                top: 122px;
+                left: -80px;
+                /* background-color: red; */
+                z-index: -5;
+            }
+        }
+        p{
+            width: 80%;
+            font-weight: 200;
+            font-size: 0.8em;
+        }
+        button{
+            width: 40%;
+            background-color: $dark_blue;
+            color: white;
+            border: none;
+            outline: none;
+            height: 7vh;
+            margin-top: 6vh;
+            border-radius: 20px 20px 20px 20px/50px 50px 50px 60px;
+            cursor: pointer;
+        }
+    }
+}
+.work{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+    $width:400px;
+    $height:400px;
+    position: relative;
+    .strips{
+        position: absolute;
+        left: 20px;
+        width: 200px;
+        z-index: -1;
+    }
+    .topStrips{
+        z-index: +66;
+        left: auto;
+        right: 150px;
+        top:300px;
+        width: 130px;
+    }
+    .project{
+        width: $width;
+        height: $height;
+        background-image: url(../img/mesh-works-small.png);
+        background-position: initial;
+        background-size: cover;
+        border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;
+        transition: all 2s ease;
+        animation: border 8s both infinite ;
+        box-shadow: 0 10px 20px #32325d1a;
+        @include center();
+    &:hover{
+        box-shadow:  0 10px 30px #2d2d4a48; 
+        transform: translateY(-30px);
+    }
+    @keyframes border {
+        0%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;}
+        50%{border-radius: 66% 34% 63% 37% / 71% 71% 29% 29%;}
+        100%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%}
+    }
+    .h3{
+        color: $dark_blue;
+        padding-bottom: 20px;
+    }
+    .p{
+        width: 70%;
+        color: $dark-blue;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .btn{
+        width: 40%;
+        height: 6vh;
+        text-align: center;
+        background-color: $dark_blue;
+        color: #fff;
+        border:none;
+        outline: none;
+        border-radius: 50px;
+        @include center();
+        flex-direction: row;
+        cursor: pointer;
+    }
+}
+    .cv{
+        width: $width;
+        height: $height;
+        @include center();
+        background-color:#fff;
+        border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;
+        transition: all 2s ease;
+        animation: brdr 8s both infinite;
+        box-shadow: 0 10px 20px #32325d1a;
+        &:hover{
+            box-shadow:  0 10px 30px #2d2d4a48; 
+            transform: translateY(-30px);
+        }
+        @keyframes brdr {
+            0%{border-radius: 40% 60% 19% 81% / 54% 25% 75% 46% ;}
+            50%{border-radius:  60% 40% 64% 36% / 40% 59% 41% 60%  ;}
+            100%{border-radius: 40% 60% 19% 81% / 54% 25% 75% 46% }
+        }
+        .h3{
+            color: $dark_blue;
+            padding-bottom: 20px;
+        }
+        .p{
+            width: 70%;
+            color: $dark-blue;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .btn{
+            width: 40%;
+            height: 6vh;
+            text-align: center;
+            background-color: $dark_blue;
+            color: #fff;
+            border:none;
+            outline: none;
+            border-radius: 50px;
+            @include center();
+            flex-direction: row;
+            cursor: pointer;
+        } 
+    } 
+}  
+.skills{
+    height: 80vh;
+    text-align: center;
+    padding: 2vh;
+    &__title{
+        color:$purple-primary;
+        font-size:4rem;
+        margin: 1vh;
+
+        &::before{
+            content: " . .   ";
+            width: 50px;
+            font-weight: 700;
+            font-size: 4rem;
+            color:$purple-secondery;
+        }
+    }
+    &__container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2%;
+        &-skill{
+            width: 8vw;
+            padding: 2% 3% 2% 3%;
+            height: 17vh;
+        }
+        .skills-img{
+            width:8vw;
+            transition: all 1s ;
+            &:hover{
+                filter: drop-shadow(0px 19px 14px #1532481f);
+                transform: translatey(-20px);
+            }
+        }
+    }
+    .circle{
+        position:relative;
+        z-index: 55;
+        top: -134px;
+        left: -20px;
+        &:hover{
+            .html{
+                stroke-dasharray:400;
+                stroke-dashoffset:0;
+            }
+            .css{                
+                stroke-dasharray:350;
+                stroke-dashoffset:0;
+            }
+            .js{                
+                stroke-dasharray:320;
+                stroke-dashoffset:0;
+            }
+            .git {                
+                stroke-dasharray:220;
+                stroke-dashoffset:0;
+            }
+            .react {                
+                stroke-dasharray:320;
+                stroke-dashoffset:0;
+            }
+            .veu {                
+                stroke-dasharray:220;
+                stroke-dashoffset:0;
+            }
+            .api {                
+                stroke-dasharray:220;
+                stroke-dashoffset:0;
+            }
+            .sass {                
+                stroke-dasharray:350;
+                stroke-dashoffset:0;
+            }
+            .jQuery {                
+                stroke-dasharray:350;
+                stroke-dashoffset:0;
+            }
+            .bootstrap {                
+                stroke-dasharray:400;
+                stroke-dashoffset:0;
+            }
+        }
+      }
+      .effect{
+        stroke-dasharray:630;
+        stroke-dashoffset:630;
+        transition: ease-out 0.5s;
+      }
+}
+
+.footer{
+    height: 40vh;
+    width:100%;
+    background: linear-gradient(to right, #99ccff, #9999ff);
+    margin-top: -10px;
+}

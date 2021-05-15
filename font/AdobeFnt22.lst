@@ -1,0 +1,55 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BigillaRegular
+FamilyName:Bigilla
+StyleName:Regular
+FullName:Bigilla
+MenuName:Bigilla
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\Users\Lenovo\Desktop\portfolio\Font\Bigilla.21f3aec8.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:177196
+FileModTime:1614341953
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Bigilla
+NameArray:0,Win,1,Bigilla
+NameArray:0,Win,16,Bigilla
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Gilroy-ExtraBold
+FamilyName:Gilroy
+StyleName:ExtraBold
+FullName:Gilroy ExtraBold
+MenuName:Gilroy ExtraBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\Users\Lenovo\Desktop\portfolio\Font\Gilroy-ExtraBold.0f6e082f.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:54956
+FileModTime:1614341953
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Gilroy ExtraBold
+NameArray:0,Win,1,Gilroy ExtraBold
+NameArray:0,Win,16,Gilroy
+%EndFont
+
