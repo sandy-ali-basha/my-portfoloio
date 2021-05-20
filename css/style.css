@@ -1,11 +1,16 @@
 @font-face {
   font-family: "Bigilla";
-  src: local("Bigilla"), url(../font/Bigilla.21f3aec8.otf) format("woff");
+  src: local("Bigilla"), url(../font/Bigilla.21f3aec8.otf) format("otf");
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: local("Gilroy"), url(../font/Gilroy-ExtraBold.0f6e082f.otf) format("woff");
+  src: local("Gilroy"), url(../font/Gilroy-ExtraBold.0f6e082f.otf) format("otf");
+}
+
+@font-face {
+  font-family: "rubik";
+  src: local("Gilroy"), url(../font/Rubik-Black.ttf) format("ttf");
 }
 
 .contact {
@@ -219,62 +224,56 @@
   }
 }
 
+.cursor {
+  position: absolute;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 10000;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  mix-blend-mode: difference;
+  border: 1px solid black;
+}
+
+.cursor.active {
+  opacity: 0.5;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.cursor.hovered {
+  opacity: 0.08;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Rubik', sans-serif;
 }
 
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9966ff;
+  border-radius: 2px;
+}
+
 header {
   opacity: 0.8;
-  background: #95b0f9;
-  height: 100vh;
-}
-
-header::before {
-  background: radial-gradient(circle at 49% 51%, #95b0f9, rgba(149, 176, 249, 0) 50%), radial-gradient(circle at 10% 10%, #9966ff, rgba(153, 102, 255, 0) 50%), radial-gradient(circle at 90% 10%, #99ffff, rgba(153, 255, 255, 0) 50%), radial-gradient(circle at 90% 90%, #9966ff, rgba(153, 102, 255, 0) 50%), radial-gradient(circle at 10% 90%, #99ffff, rgba(153, 255, 255, 0) 50%);
-  -webkit-animation: OpacityAnim 3s ease-in-out 0s infinite alternate;
-          animation: OpacityAnim 3s ease-in-out 0s infinite alternate;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-}
-
-header::after {
   background: radial-gradient(circle at 49% 51%, #95b0f9, rgba(149, 176, 249, 0) 50%), radial-gradient(circle at 10% 10%, #99ffff, rgba(153, 255, 255, 0) 50%), radial-gradient(circle at 90% 10%, #9966ff, rgba(153, 102, 255, 0) 50%), radial-gradient(circle at 90% 90%, #99ffff, rgba(153, 255, 255, 0) 50%), radial-gradient(circle at 10% 90%, #9966ff, rgba(153, 102, 255, 0) 50%);
-  -webkit-animation: OpacityAnim 3s ease-in-out calc(-1 * 2s) infinite alternate;
-          animation: OpacityAnim 3s ease-in-out calc(-1 * 2s) infinite alternate;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-}
-
-@-webkit-keyframes OpacityAnim {
-  0% {
-    opacity: 1.0;
-  }
-  100% {
-    opacity: 0.0;
-  }
-}
-
-@keyframes OpacityAnim {
-  0% {
-    opacity: 1.0;
-  }
-  100% {
-    opacity: 0.0;
-  }
+  height: 100vh;
 }
 
 header nav {
@@ -320,18 +319,36 @@ header .title {
           flex-direction: column;
 }
 
-header .title h1 {
+header .title .header-text {
   margin-left: 10vw;
   color: white;
   font-size: 4rem;
   font-weight: 700;
 }
 
-header .title h1::before {
+header .title .header-text::before {
   content: url(../img/white_stripes.svg);
   width: 11vw;
   position: absolute;
   left: 85px;
+}
+
+header .title .header-contact-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  margin-left: 10vw;
+  padding-top: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 15%;
+}
+
+header .title .header-contact-icons a {
+  text-decoration: none;
+  color: white;
 }
 
 header .title h5 {
@@ -344,6 +361,7 @@ header .title .div-animation {
   position: absolute;
   top: 16vh;
   right: 5rem;
+  width: 35%;
 }
 
 header .title .av {
@@ -408,6 +426,7 @@ header .hero-cube-2 .hero-picture-2 {
       grid-template-areas: ". .";
   color: #4447b3;
   height: 100vh;
+  background: #f8f8ff;
 }
 
 .hey .light_blue {
@@ -488,6 +507,7 @@ header .hero-cube-2 .hero-picture-2 {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 100vh;
+  background: #f8f8ff;
   position: relative;
 }
 
@@ -702,6 +722,7 @@ header .hero-cube-2 .hero-picture-2 {
   height: 80vh;
   text-align: center;
   padding: 2vh;
+  background-color: #f8f8ff;
 }
 
 .skills__title {

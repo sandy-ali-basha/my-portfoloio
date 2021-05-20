@@ -1,1 +1,27 @@
-/* No CSS *//*# sourceMappingURL=cursor.css.map */
+.cursor {
+  position: absolute;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 10000;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  mix-blend-mode: difference;
+  border: 1px solid black;
+}
+
+.cursor.active {
+  opacity: 0.5;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.cursor.hovered {
+  opacity: 0.08;
+}
+/*# sourceMappingURL=cursor.css.map */
