@@ -837,6 +837,75 @@ header .hero-cube-2 .hero-picture-2 {
   transition: ease-out 0.5s;
 }
 
+.experince {
+  background-color: #f8f8ff;
+}
+
+.experince h1 {
+  color: #030200;
+  font-weight: bold;
+  padding: 16vh 5vh 3vw 23vh;
+}
+
+.experince .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10vw;
+  height: 80vh;
+}
+
+.experince .boxes .degrees {
+  width: 40%;
+  border-radius: 20px;
+  background-color: white;
+  -webkit-box-shadow: 1px 5px 8px 4px #4700493a;
+          box-shadow: 1px 5px 8px 4px #4700493a;
+  margin: 2vw;
+  padding: 2vw;
+  height: 70%;
+}
+
+.experince .boxes .element {
+  color: #030200;
+  padding: 4px 0vw;
+}
+
+.experince .boxes .element span {
+  color: #4e4b4a;
+}
+
+.experince .boxes .element .element-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.experince .boxes .element .element-title img {
+  padding-right: 5px;
+}
+
+.experince .boxes .element .border {
+  border-left: 2px solid #9933ff;
+  padding-left: 2vw;
+  margin-left: 1vw;
+}
+
+.experince .boxes .jobs {
+  width: 40%;
+  border-radius: 20px;
+  background-color: white;
+  background-color: white;
+  -webkit-box-shadow: 1px 5px 8px 4px #4700493a;
+          box-shadow: 1px 5px 8px 4px #4700493a;
+  margin: 2vw;
+  padding: 2vw;
+  height: 70%;
+}
+
 .footer {
   height: 40vh;
   width: 100%;

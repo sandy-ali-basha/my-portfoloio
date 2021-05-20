@@ -425,7 +425,59 @@ header{
         transition: ease-out 0.5s;
       }
 }
+.experince{
+    background-color: $ghost-color;
+    h1{
+        color:$black;
+        font-weight: bold;
+        padding: 16vh 5vh 3vw 23vh;
 
+    }
+    .boxes{
+        display:flex;
+        padding: 0 10vw;
+        height:80vh;
+        .degrees{
+            width:40%;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 1px 5px 8px 4px #4700493a;
+            margin:2vw;
+            padding:2vw;
+            height:70%;
+
+        }
+        .element{
+            color:$black;
+            padding: 4px 0vw;
+            span{
+                color:$gray;
+            }
+            .element-title{
+                img{
+                    padding-right:5px;
+                }
+                display:flex;
+                align-items: center;
+            }
+            .border{
+                border-left:2px solid $purple-primary;
+                padding-left:2vw;
+                margin-left: 1vw;
+            }
+        }
+        .jobs{
+            width:40%;
+            border-radius: 20px;
+            background-color: white;
+            background-color: white;
+            box-shadow: 1px 5px 8px 4px #4700493a;
+            margin:2vw;
+            padding:2vw;
+            height:70%;
+        }
+    }
+}
 .footer{
     height: 40vh;
     width:100%;
