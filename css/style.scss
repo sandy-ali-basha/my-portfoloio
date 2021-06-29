@@ -5,15 +5,15 @@ $i:10;
     padding:  0;
     font-family: 'Rubik', sans-serif;
 }
-
-::-webkit-scrollbar-track
-{
-	background-color: transparent;
+html {
+    scroll-behavior: smooth;
+    
+  }
+::-webkit-scrollbar-track{
+	background-color: $ghost-color;
 }
-::-webkit-scrollbar
-{
+::-webkit-scrollbar{
 	width: 8px;
-
 }
 
 ::-webkit-scrollbar-thumb
@@ -36,6 +36,55 @@ $i:10;
     justify-content: center;
     align-items: center;
     }
+    .shape-one {
+        width: 30px;
+        height: 30px;
+        top: 4%;
+        right: 22%;
+        position: absolute;
+        animation: animationFramesTwo 15s infinite linear;
+        overflow: hidden;
+        vertical-align: middle;
+        z-index: 5;
+    }
+    .shape-2{
+        left: 5%;
+        top: 62%;
+        animation: animationFramesTwo 20s infinite ease reverse;
+    }
+    .shape-3{
+        right: 20%;
+        top: 70%;
+        width:40px;
+        height: 40px;
+        animation: animationFramesTwo 10s infinite ease reverse;
+    }
+    .shape-4{
+        right: 20%;
+        top: 80%;
+        width:20px;
+        animation: animationFramesTwo 30s infinite ease-in-out reverse;
+    }
+    @keyframes animationFramesTwo{
+        0% {
+            transform: translate(0px,0px) rotate(0deg) scale(1);
+        }
+        20% {
+            transform: translate(73px,-1px) rotate(36deg) scale(.9);
+        }
+        40% {
+            transform: translate(141px,72px) rotate(72deg) scale(1);
+        }
+        60% {
+            transform: translate(83px,122px) rotate(108deg) scale(1.2);
+        }
+        80% {
+            transform: translate(-40px,72px) rotate(144deg) scale(1.1);
+        }
+        100% {
+            transform: translate(0px,0px) rotate(0deg) scale(1);
+        }
+}
 header{
     // &::before{
     //     background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%) ;
@@ -84,8 +133,13 @@ header{
             text-decoration: none;
         }
         .menu{
+            letter-spacing: 2px;
             a{
                 margin-right: 10px;
+                transition: all .5s;
+                &:hover{
+                    color:$dark_blue;
+                }
             }
 
         }
@@ -101,11 +155,27 @@ header{
             color: white;
             font-size: 4rem;
             font-weight: 700;
+
             &::before{
                 content: url(../img/white_stripes.svg);
                 width: 11vw;
                 position: absolute;
                 left: 85px;
+            }
+            h2{
+                @include media(">phone", "<=tablet") { 
+                    font-size:3rem;
+                }
+            }
+            h6{
+                @include media(">phone", "<=tablet") { 
+                    font-size:2rem;
+                }
+            }
+            h4{
+                @include media(">phone", "<=tablet") { 
+                    font-size:2rem;
+                }
             }
         }
         .header-contact-icons{
@@ -130,6 +200,7 @@ header{
             top:16vh;
             right:5rem;
             width: 35%;
+            
         }
         .av{
             position: absolute;
@@ -175,15 +246,26 @@ header{
         }
     }
 }
+@mixin btnBg {
+    background-image: linear-gradient(to right, #9933ff 0%, #c490f8 51%, #9933ff 100%);
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius:50px;
+    &:hover{
+        background-position: right center;
+    }
+}
 .hey{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0vw;
     grid-template-areas:". .";
-    color: $dark_blue;
+    color: $black_primary;
     height: 100vh;
     background:$ghost-color;
+    position:relative;
     .light_blue{
         color: $light-blue;
         font-weight: bold;
@@ -228,18 +310,21 @@ header{
         }
         button{
             width: 40%;
-            background-color: $dark_blue;
             color: white;
             border: none;
             outline: none;
             height: 7vh;
             margin-top: 6vh;
-            border-radius: 20px 20px 20px 20px/50px 50px 50px 60px;
             cursor: pointer;
+            @include btnBg();
+            a{
+                text-decoration: none;
+                color:white;
+            }
         }
     }
 }
-.work{
+.mywork{
     display: flex;
     justify-content: space-evenly;
     height: 100vh;
@@ -281,12 +366,12 @@ header{
         100%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%}
     }
     .h3{
-        color: $dark_blue;
+        color: $black_primary;
         padding-bottom: 20px;
     }
     .p{
         width: 70%;
-        color: $dark-blue;
+        color: $black_secondary;
         text-align: center;
         padding-bottom: 30px;
     }
@@ -294,12 +379,11 @@ header{
         width: 40%;
         height: 6vh;
         text-align: center;
-        background-color: $dark_blue;
         color: #fff;
         border:none;
         outline: none;
-        border-radius: 50px;
         @include center();
+        @include btnBg();
         flex-direction: row;
         cursor: pointer;
     }
@@ -323,12 +407,12 @@ header{
             100%{border-radius: 40% 60% 19% 81% / 54% 25% 75% 46% }
         }
         .h3{
-            color: $dark_blue;
+            color: $black_primary;
             padding-bottom: 20px;
         }
         .p{
             width: 70%;
-            color: $dark-blue;
+            color: $black_secondary;
             text-align: center;
             padding-bottom: 30px;
         }
@@ -336,12 +420,12 @@ header{
             width: 40%;
             height: 6vh;
             text-align: center;
-            background-color: $dark_blue;
             color: #fff;
             border:none;
             outline: none;
             border-radius: 50px;
             @include center();
+            @include btnBg();
             flex-direction: row;
             cursor: pointer;
         } 
@@ -352,17 +436,19 @@ header{
     text-align: center;
     padding: 2vh;
     background-color: $ghost-color;
+    position: relative;
     &__title{
-        color:$purple-primary;
+        color:$black_primary;
         font-size:4rem;
         margin: 1vh;
+        font-weight: bold;
 
         &::before{
             content: " . .   ";
             width: 50px;
             font-weight: 700;
             font-size: 4rem;
-            color:$purple-secondery;
+            color:$black_secondary;
         }
     }
     &__container{
@@ -442,7 +528,7 @@ header{
 .experince{
     background-color: $ghost-color;
     h1{
-        color:$black;
+        color:$black_primary;
         font-weight: bold;
         padding: 16vh 5vh 3vw 23vh;
         font-size:3rem;
@@ -450,22 +536,25 @@ header{
     .boxes{
         display:flex;
         padding: 0 10vw;
-        height:80vh;
+        background: url("../img/bg-shape.svg") center center/contain no-repeat;
+        height:100vh;
+
         .degrees{
             width:40%;
             border-radius: 20px;
             background-color: white;
             box-shadow: 1px 5px 8px 4px #4700493a;
             margin:2vw;
-            padding:2vw;
-            height:70%;
-
+            padding: 2vw;
+            height:60%;
         }
         .element{
-            color:$black;
+            color:$black_primary;
             padding: 4px 0vw;
             span{
                 color:$gray;
+                font-weight: 500;
+                padding-left:9px;
             }
             .element-title{
                 img{
@@ -475,9 +564,15 @@ header{
                 align-items: center;
             }
             .border{
-                border-left:2px solid $purple-primary;
+                border-left:1.7px solid $purple-primary;
                 padding-left:2vw;
                 margin-left: 1vw;
+                padding-bottom: 1.4vw;
+                p{
+                    padding-bottom: 0.5rem;
+                    padding-top:0.5rem;
+                    color:$black_secondary;
+                }
             }
         }
         .jobs{
@@ -488,19 +583,39 @@ header{
             box-shadow: 1px 5px 8px 4px #4700493a;
             margin:2vw;
             padding:2vw;
-            height:70%;
+            height:60%;
         }
     }
 }
+
+.shape-img-div{
+    position:absolute;
+    width: 50vw;
+    height: 0vh;
+    z-index:1;
+    top:13vw;
+    img{
+        width:100%;
+        position: absolute;
+        width: 100%;
+        top:10vh;
+        right: -79vw;
+    }
+}
 .recentWork{
+    position:relative;
     background-color: $ghost-color;
+    position: relative;
+    overflow-x: hidden;
     &__title{
         padding: 8vh 0 9vh 12vw;
         font-size:3rem;
-        color:$black;
+        color:$black_primary; 
+        z-index: 6;
+        position:relative
     }
     &__dots{
-        position:relative;
+        position:relative;    z-index: 6;
         top: 101px;
         left: 140px;
         width: 30px;
@@ -512,26 +627,44 @@ header{
     .works{
         display:flex;
         padding:2vw 10vw;
-        flex-wrap: wrap;
+        flex-wrap: wrap;    z-index: 6;
+        position:relative;  
         .work{
-            width: 25vw;
-            height: 25vw;
+            width: 23vw;
+            height: 23vw;
             background: white;
             box-shadow: 5px 5px 11px 0px #c5c5c5;
-            margin: 0.7vw;
+            margin: 1vw;
             border-radius: 10px ;
             background: #fff url(../img/work.png) center center/contain no-repeat;
         }
-        .show-more{
+            :nth-child(1){
+                background: #fff url(../img/website-1.jpg) center center/contain no-repeat;
+            }
+            :nth-child(2){
+                background: #fff url(../img/website-2.jpg) center center/contain no-repeat;
+            }
+            :nth-child(3){
+                background: #fff url(../img/website-3.jpg) center center/contain no-repeat;
+            }
+            :nth-child(4){
+                background: #fff url(../img/website-4.jpg) center center/contain no-repeat;
+            }
+    }
+    .showMoreDiv{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        .showMore{
             text-align: center;
             border:none;
             outline: none;
-            background:$blue-secondary;
+            text-align: center;
+            @include btnBg();
             color:white;
-            &:hover{
-                background-color: $blue-primary;
-            }
-
+            cursor: pointer;
+            margin:20px;
+            padding:10px;
         }
     }
 }
@@ -540,4 +673,176 @@ header{
     width:100%;
     background: linear-gradient(to right, #99ccff, #9999ff);
     margin-top: -10px;
+}
+
+.sayHi{
+    background-color:$ghost-color;
+    height:100vh;
+    padding:2vw;
+    position: relative;
+    .aam-whatsapp-widget-popup {
+        display: block;
+        border: 1px solid #dadada;
+        border-radius: 4px;
+        width: 300px;
+        box-shadow: 0 0 20px 0 #0003;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 15px;
+        user-select: none;
+        margin-left:12vw;
+    }
+    
+    .aam-whatsapp-widget-title-wrapper {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+    }
+
+    .aam-whatsapp-widget-title {
+        display: block;
+        color: #fff;
+        line-height: 20px;
+        height: 20px;
+        // vertical-align: top;
+        margin-left: 10px;
+        font-size: 16px;
+        max-width: 220px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .aam-whatsapp-widget-subtitle {
+        display: block;
+        color: #97bbb8;
+        padding-left: 1px;
+        line-height: 17px;
+        height: 15px;
+        // vertical-align: top;
+        margin-left: 10px;
+        font-size: 12px;
+        max-width: 220px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .aam-whatsapp-widget-chat-body {
+        display: block;
+        position: relative;
+        background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png)
+        no-repeat center;
+        background-size: 100% auto;
+        width: calc(100% - 24px);
+        min-height: 200px;
+        padding: 12px;
+    }
+
+    .aam-whatsapp-widget-head {
+        display: block;
+        position: relative;
+        background: #22776b;
+        color: #fff;
+        height: 35px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 15px 10px;
+    }
+
+    .aam-whatsapp-widget-message {
+        display: block;
+        background: #fff;
+        border-radius: 4px;
+        padding: 7px 10px;
+        box-shadow: 0px 1px 3px 0 #00000024;
+    }
+    
+    .aam-whatsapp-widget-message::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border: 11px solid transparent;
+        border-right-color: #ffffff;
+        transform: rotate(135deg);
+        top: 1px;
+        left: 7px;
+    }
+    
+    .aam-whatsapp-widget-message::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .aam-whatsapp-widget-message-time {
+        display: inline-block;
+        position: relative;
+        float: right;
+        font-size: 13px;
+        color: #7f8d9a;
+        top: 5px;
+    }
+    
+    .aam-whatsapp-widget-logo {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #fff;
+        overflow: hidden;
+    }
+    
+    .aam-whatsapp-widget-logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .aam-whatsapp-widget-buttons-wrapper {
+        display: block;
+        /*height: 30px;*/
+        padding: 10px;
+
+    }
+    
+    .aam-whatsapp-widget-start-chat-btn {
+        display: block;
+        background: #47e675;
+        color: #fff;    
+        border-radius: 4px;
+        line-height: 35px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover{
+            background:#3db961;
+        }
+    }
+    a{
+        text-decoration:none;
+    }
+    .aam-whatsapp-widget-start-chat-btn svg {
+        width: 20px;
+        height: 20px;
+        margin: 0px 5px -4px;
+    }
+    .aam-whatsapp-widget-logo-wrapper {
+        display: inline-block;
+        position: relative;
+    }
+    .aam-whatsapp-widget-logo-wrapper::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4ad506;
+        bottom: 3px;
+        right: 0px;
+        box-shadow: 0 0 2px 1px #00000026;
+    }
 }
