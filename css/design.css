@@ -1,4 +1,6 @@
 .svg svg {
+  position: absolute;
+  bottom: 40vh;
   width: 100%;
   -webkit-transform: rotate(180deg) rotateY(180deg);
           transform: rotate(180deg) rotateY(180deg);
@@ -128,7 +130,7 @@
   margin: 0;
   opacity: 80%;
   z-index: +5;
-  position: relative;
-  top: -352px;
+  position: absolute;
+  bottom: 0px;
 }
 /*# sourceMappingURL=design.css.map */

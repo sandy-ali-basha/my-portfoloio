@@ -4,22 +4,102 @@ $i:10;
     margin: 0;
     padding:  0;
     font-family: 'Rubik', sans-serif;
+    cursor:none;    
+    transition:all .5s;    
+
 }
-html {
+
+html{
     scroll-behavior: smooth;
-    
-  }
+    overflow-x:hidden;
+
+}
+body{
+    overflow-x: hidden;
+}
 ::-webkit-scrollbar-track{
 	background-color: $ghost-color;
 }
 ::-webkit-scrollbar{
 	width: 8px;
 }
-
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb{
 	background-color: $purple-secondery;
     border-radius: 2px;
+}
+//dark mode
+.darkMode{
+    &::-webkit-scrollbar-track{
+        background-color: $background !important;
+    }
+    header , .hey ,.mywork,.skills,.experince,.recentWork,.sayHi {
+        background:$background;
+        color:$primary-text;
+        h1{
+            color:$blue-secondary;
+        }
+    }
+    .header_motion{
+        svg{
+            background:transparent !important;
+        }
+    }
+    .menu{
+        a{
+            &:hover{
+                color:$blue-primary !important;
+            }
+            color:$blue-primary !important;
+        }
+    }
+    .box{
+        background:$hover !important;
+        h3{
+            color:$primary-text !important;
+        }
+        p{
+            color:$blue-secondary !important;
+        }
+
+    }
+    .cursor{
+        background:$primary-text;
+    }
+    .cursor-follower{
+        border-color:$primary-text;
+        background:transparent;
+    }
+    .degrees,.jobs{
+        background-color: $hover !important; 
+        h5,h4{
+            color:$primary-text;
+        }
+        p{
+            color:$blue-primary!important;
+        }
+    }
+    .recentWork{
+        .work{
+            box-shadow:none !important;
+        }
+    }
+    .sayHi{
+        input, textarea{
+            background:$menue !important;
+            color:$primary-text !important;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: $primary-text;
+                opacity: 1; /* Firefox */
+              }
+        }
+        h3, p {
+            color:$primary-text !important;
+        }
+        .btn{
+            background: $blue-secondary !important;
+            color:$background !important;
+        } 
+    }
 }
 .spinner-wrapper {
     position: fixed;
@@ -29,7 +109,6 @@ html {
     bottom: 0;
     background-color: white;
     z-index: 999999;
-    width:100vw;
     height:100vh;
     overflow: hidden;
     display:flex;
@@ -46,24 +125,40 @@ html {
         overflow: hidden;
         vertical-align: middle;
         z-index: 5;
+        @include media("<tablet") { 
+            animation:none;
+            transition:none;
+        }
     }
     .shape-2{
         left: 5%;
         top: 62%;
         animation: animationFramesTwo 20s infinite ease reverse;
+        @include media("<tablet") { 
+            animation:none;
+            transition:none;
+        }
     }
     .shape-3{
         right: 20%;
-        top: 70%;
+        top: 40%;
         width:40px;
         height: 40px;
         animation: animationFramesTwo 10s infinite ease reverse;
+            @include media("<tablet") { 
+        animation:none;
+        transition:none;
+    }
     }
     .shape-4{
         right: 20%;
         top: 80%;
         width:20px;
         animation: animationFramesTwo 30s infinite ease-in-out reverse;
+        @include media("<tablet") { 
+            animation:none;
+            transition:none;
+        }
     }
     @keyframes animationFramesTwo{
         0% {
@@ -86,51 +181,31 @@ html {
         }
 }
 header{
-    // &::before{
-    //     background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%) ;
-    //     animation: OpacityAnim 3s ease-in-out 0s infinite alternate;
-    //         content: '';
-    //         display: block;
-    //         position: absolute;
-    //         top: 0;
-    //         bottom: 0;
-    //         left: 0;
-    //         right: 0;
-    //         z-index: -1;
-    // }
-    // &::after{
-    //     background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%) ;
-    //             animation: OpacityAnim 3s ease-in-out calc(-1 * 2s) infinite alternate;
-    //             content: '';
-    //             display: block;
-    //             position: absolute;
-    //             top: 0;
-    //             bottom: 0;
-    //             left: 0;
-    //             right: 0;
-    //             z-index: -1;
-    // }
     opacity: 0.8;
-    // @keyframes OpacityAnim {
-    //     0%{opacity: 1.0}
-    //     100%{opacity: 0.0}
-    // }
-        background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%) ;
-
-    height: 100vh;
-
+    height: 120vh;
+    background: ghostwhite;
+    background: radial-gradient(circle at 49% 51%,rgba(149,176,249,1), rgba(149,176,249,0) 50%), radial-gradient(circle at 10% 10%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 90% 10%,rgba(153,102,255,1), rgba(153,102,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(153,255,255,1), rgba(153,255,255,0) 50%), radial-gradient(circle at 10% 90%,rgba(153,102,255,1), rgba(153,102,255,0) 50%) ;
+    section{
+        height: 70%;
     nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: calc(100% - 120px);
         padding: 50px 60px;
         color: white;
         position: absolute;
         z-index: 5555;
+        width:90%;
+        @include media("<phone") { 
+            display:none;
+            .toggle{
+                display:block !important;
+            }
+        }
         a{
             color: white;
             text-decoration: none;
+
         }
         .menu{
             letter-spacing: 2px;
@@ -155,12 +230,14 @@ header{
             color: white;
             font-size: 4rem;
             font-weight: 700;
-
+            @include media("<phone") { 
+                font-size:2rem;
+            }
             &::before{
                 content: url(../img/white_stripes.svg);
                 width: 11vw;
                 position: absolute;
-                left: 85px;
+                left: 85px; 
             }
             h2{
                 @include media(">phone", "<=tablet") { 
@@ -187,7 +264,13 @@ header{
             width:15%;
             a{
                 text-decoration: none;
-                color:white
+                color:white;
+                img{
+                    cursor: pointer;
+                    @include media ("<tablet"){
+                        margin-inline:1rem;
+                    }
+                }
             }
         }
         h5{
@@ -200,7 +283,17 @@ header{
             top:16vh;
             right:5rem;
             width: 35%;
-            
+            width: 500px !important;
+            @include media(">phone", "<=tablet") { 
+                width:50vw !important;
+            }
+            @include media("<phone") { 
+                position:relative;
+                width: 100vw !important;
+                top: -1vh;
+                right: 0px;
+                width:90%;
+            }
         }
         .av{
             position: absolute;
@@ -243,11 +336,12 @@ header{
         z-index: 0;
         .hero-picture-2{
             width: 50%;
-        }
+            }
+        }      
     }
 }
 @mixin btnBg {
-    background-image: linear-gradient(to right, #9933ff 0%, #c490f8 51%, #9933ff 100%);
+    background-image: linear-gradient(to right, #9999ff 0%, #bdbdfa 51%, #9999ff 100%);
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
@@ -256,34 +350,51 @@ header{
         background-position: right center;
     }
 }
+    
 .hey{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0vw;
-    grid-template-areas:". .";
+    display:flex;
+    flex-direction: row;
     color: $black_primary;
     height: 100vh;
     background:$ghost-color;
     position:relative;
+    @include media("<tablet") { 
+        display:flex;
+        flex-direction: column;        
+    }
     .light_blue{
         color: $light-blue;
         font-weight: bold;
     }
     .img{
         padding: 2vw;
+        width:50%;  
+        @include media("<phone") { 
+            display: flex;
+            justify-content:center ;
+            align-item:center ;
+            width:100%;
+            height: 80%;;
+        }
         .strips{
             position: relative;
             top: -23vh;
             width: 15vw;
             z-index: -55;
             left: 6vw;
+            @include media("<phone") { 
+                display:none;
+            }
         }
         .cvImg{
             width: 23vw;
             position: relative;
             top: 26vh;
             z-index: 555;
+            @include media("<phone") { 
+                width:60vw;
+                top: initial;
+            }
         }
     }
     .txt{
@@ -291,6 +402,9 @@ header{
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        @include media("<phone") { 
+            align-items: center;
+        }
         h1{
             padding-bottom: 20px;
             font-size: 4rem;
@@ -316,11 +430,19 @@ header{
             height: 7vh;
             margin-top: 6vh;
             cursor: pointer;
+            
             @include btnBg();
             a{
                 text-decoration: none;
                 color:white;
             }
+            @include media(">phone", "<=tablet") { 
+                font-size:x-small;
+            }
+            @include media("<phone") {
+                font-size:11px;
+            }
+            
         }
     }
 }
@@ -332,6 +454,11 @@ header{
     $height:400px;
     background:$ghost-color;
     position: relative;
+    @include media("<phone") {
+        flex-direction: column;
+        align-items: center;
+        height:100vh;
+    }
     .strips{
         position: absolute;
         left: 20px;
@@ -355,25 +482,44 @@ header{
         transition: all 2s ease;
         animation: border 8s both infinite ;
         box-shadow: 0 10px 20px #32325d1a;
+        @include media("<tablet") { 
+            animation:none;
+            transition:none;
+        }
         @include center();
-    &:hover{
-        box-shadow:  0 10px 30px #2d2d4a48; 
-        transform: translateY(-30px);
-    }
-    @keyframes border {
-        0%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;}
-        50%{border-radius: 66% 34% 63% 37% / 71% 71% 29% 29%;}
-        100%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%}
-    }
+        &:hover{
+            box-shadow:  0 10px 30px #2d2d4a48; 
+            transform: translateY(-30px);
+        }
+        @keyframes border {
+            0%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;}
+            50%{border-radius: 66% 34% 63% 37% / 71% 71% 29% 29%;}
+            100%{border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%}
+        }
+        @include media(">phone", "<=tablet") { 
+           width:40vw;
+           height:40vw;
+        }
+        @include media("<phone") {
+            width:80vw;
+            height: 80vw;
+            margin-block: 4vh;
+        }
     .h3{
         color: $black_primary;
         padding-bottom: 20px;
+        @include media(">phone", "<=tablet") { 
+            font-size:small;
+         }
     }
     .p{
         width: 70%;
         color: $black_secondary;
         text-align: center;
         padding-bottom: 30px;
+        @include media(">phone", "<=tablet") { 
+            font-size:small;
+         }
     }
     .btn{
         width: 40%;
@@ -386,21 +532,51 @@ header{
         @include btnBg();
         flex-direction: row;
         cursor: pointer;
+        font-size: 0.8rem;
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        @include media(">phone", "<=tablet") { 
+            font-size:x-small;
+        }
+        @include media("<phone"){
+            font-size: 0.8rem;
+        }
     }
 }
+
     .cv{
         width: $width;
         height: $height;
+        background: white;
         @include center();
-        background-color:#fff;
         border-radius: 44% 56% 27% 73% / 53% 36% 64% 47%;
         transition: all 2s ease;
         animation: brdr 8s both infinite;
+
+        @include media("<tablet") { 
+            animation:none;
+            transition:none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
         box-shadow: 0 10px 20px #32325d1a;
         &:hover{
             box-shadow:  0 10px 30px #2d2d4a48; 
             transform: translateY(-30px);
         }
+        @include media(">phone", "<=tablet") { 
+            width:40vw;
+            height:40vw;
+         }
+         @include media("<phone"){
+            width:80vw;
+            height: 80vw;
+            margin-block: 4vh;
+         }
         @keyframes brdr {
             0%{border-radius: 40% 60% 19% 81% / 54% 25% 75% 46% ;}
             50%{border-radius:  60% 40% 64% 36% / 40% 59% 41% 60%  ;}
@@ -409,12 +585,18 @@ header{
         .h3{
             color: $black_primary;
             padding-bottom: 20px;
+            @include media(">phone", "<=tablet") { 
+            font-size:small;
+         }
         }
         .p{
             width: 70%;
             color: $black_secondary;
             text-align: center;
             padding-bottom: 30px;
+            @include media(">phone", "<=tablet") { 
+                font-size:small;
+             }
         }
         .btn{
             width: 40%;
@@ -426,8 +608,15 @@ header{
             border-radius: 50px;
             @include center();
             @include btnBg();
+
             flex-direction: row;
             cursor: pointer;
+            @include media(">phone", "<=tablet") { 
+                font-size:x-small;
+             }
+             @include media("<phone"){
+                font-size: 0.8rem;
+             }
         } 
     } 
 }  
@@ -437,18 +626,26 @@ header{
     padding: 2vh;
     background-color: $ghost-color;
     position: relative;
+  
+    @include media("<phone"){
+      height:initial;
+    }
+    &__dots{
+        left:155px !important;
+        top:80px !important;
+        @include media("<phone"){
+            left:20px;
+        }
+    }
     &__title{
         color:$black_primary;
+        left: 8vw;
         font-size:4rem;
-        margin: 1vh;
         font-weight: bold;
-
-        &::before{
-            content: " . .   ";
-            width: 50px;
-            font-weight: 700;
-            font-size: 4rem;
-            color:$black_secondary;
+        text-align:left;
+        &:hover{
+            color:white;
+            z-index: 9461364979;
         }
     }
     &__container{
@@ -461,6 +658,10 @@ header{
             width: 8vw;
             padding: 2% 3% 2% 3%;
             height: 17vh;
+            @include media("<phone"){
+                width:17vw;
+
+            }
         }
         .skills-img{
             width:8vw;
@@ -469,6 +670,9 @@ header{
                 filter: drop-shadow(0px 19px 14px #1532481f);
                 transform: translatey(-20px);
             }
+            @include media("<phone"){
+              width:100%;
+            }
         }
     }
     .circle{
@@ -476,6 +680,9 @@ header{
         z-index: 55;
         top: -134px;
         left: -20px;
+        @include media("<=tablet") { 
+            display: none;
+        }
         &:hover{
             .html{
                 stroke-dasharray:400;
@@ -532,13 +739,19 @@ header{
         font-weight: bold;
         padding: 16vh 5vh 3vw 23vh;
         font-size:3rem;
+        @include media("<phone"){
+            padding: 17vh 8vh 3vw 6vh;
+        }
     }
     .boxes{
         display:flex;
         padding: 0 10vw;
         background: url("../img/bg-shape.svg") center center/contain no-repeat;
         height:100vh;
-
+        @include media("<phone") { 
+            flex-direction: column;
+            height: initial;
+         }
         .degrees{
             width:40%;
             border-radius: 20px;
@@ -547,6 +760,9 @@ header{
             margin:2vw;
             padding: 2vw;
             height:60%;
+            @include media("<phone") { 
+                width:88%;
+             }
         }
         .element{
             color:$black_primary;
@@ -555,10 +771,15 @@ header{
                 color:$gray;
                 font-weight: 500;
                 padding-left:9px;
+
             }
             .element-title{
                 img{
                     padding-right:5px;
+                    @include media("<phone"){
+                        margin-right:5px;
+                        width:15px;
+                    }
                 }
                 display:flex;
                 align-items: center;
@@ -568,6 +789,9 @@ header{
                 padding-left:2vw;
                 margin-left: 1vw;
                 padding-bottom: 1.4vw;
+                @include media("<phone"){
+                    padding-left:20px;
+                }
                 p{
                     padding-bottom: 0.5rem;
                     padding-top:0.5rem;
@@ -584,6 +808,9 @@ header{
             margin:2vw;
             padding:2vw;
             height:60%;
+            @include media("<phone") { 
+                width:88%;
+             }
         }
     }
 }
@@ -607,8 +834,19 @@ header{
     background-color: $ghost-color;
     position: relative;
     overflow-x: hidden;
+    .rec_title{
+        left: 6vw;
+        top: 14px;
+        @include media(">phone", "<=tablet") { 
+            left: 9vw;
+            top: 18px;
+        }
+    }
+    .rec__dots{
+        top:100px;
+    }
     &__title{
-        padding: 8vh 0 9vh 12vw;
+        padding: 8vh 0 9vh 5vw;
         font-size:3rem;
         color:$black_primary; 
         z-index: 6;
@@ -616,10 +854,13 @@ header{
     }
     &__dots{
         position:relative;    z-index: 6;
-        top: 101px;
+        top: 14px;
         left: 140px;
         width: 30px;
         opacity: 20%;
+
+        @include media("<phone"){
+            left:20px;        }
         &-img{
             width:40px;
         }
@@ -629,6 +870,7 @@ header{
         padding:2vw 10vw;
         flex-wrap: wrap;    z-index: 6;
         position:relative;  
+
         .work{
             width: 23vw;
             height: 23vw;
@@ -637,6 +879,11 @@ header{
             margin: 1vw;
             border-radius: 10px ;
             background: #fff url(../img/work.png) center center/contain no-repeat;
+            @include media("<phone"){
+            width:80vw;
+            height:80vw;
+            margin-block:2rem;
+            }
         }
             :nth-child(1){
                 background: #fff url(../img/website-1.jpg) center center/contain no-repeat;
@@ -656,6 +903,9 @@ header{
         align-items: center;
         justify-content: center;
         .showMore{
+            @include media(">phone", "<=tablet") { 
+                font-size:x-small;
+            }
             text-align: center;
             border:none;
             outline: none;
@@ -665,184 +915,108 @@ header{
             cursor: pointer;
             margin:20px;
             padding:10px;
+
         }
     }
 }
-.footer{
-    height: 40vh;
-    width:100%;
-    background: linear-gradient(to right, #99ccff, #9999ff);
-    margin-top: -10px;
-}
+
 
 .sayHi{
     background-color:$ghost-color;
     height:100vh;
     padding:2vw;
     position: relative;
-    .aam-whatsapp-widget-popup {
-        display: block;
-        border: 1px solid #dadada;
-        border-radius: 4px;
-        width: 300px;
-        box-shadow: 0 0 20px 0 #0003;
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 15px;
-        user-select: none;
-        margin-left:12vw;
-    }
-    
-    .aam-whatsapp-widget-title-wrapper {
-        display: inline-block;
-        overflow: hidden;
-        vertical-align: top;
-    }
+    .container{
+        display:flex;
+        padding:2vw;
+        padding-left:10vw;
+        @include media(">phone", "<=tablet") {
+            padding-left:0px;
+         }
+        @include media("<phone"){
+            flex-direction: column;
+            padding-left:0vw;
+        }
+        .text{
+            width:20vw;
+            padding-top:3rem;
+            @include media(">phone", "<=tablet") {
+                width: 40vw;
+             }
+            @include media("<phone"){
+                width: 100vw;
+                padding-top: 0rem;
+                padding-left: 1rem;
+                padding-bottom: 1rem;
+            }
+            h3{
+                color:$black_primary;
 
-    .aam-whatsapp-widget-title {
-        display: block;
-        color: #fff;
-        line-height: 20px;
-        height: 20px;
-        // vertical-align: top;
-        margin-left: 10px;
-        font-size: 16px;
-        max-width: 220px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .aam-whatsapp-widget-subtitle {
-        display: block;
-        color: #97bbb8;
-        padding-left: 1px;
-        line-height: 17px;
-        height: 15px;
-        // vertical-align: top;
-        margin-left: 10px;
-        font-size: 12px;
-        max-width: 220px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .aam-whatsapp-widget-chat-body {
-        display: block;
-        position: relative;
-        background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png)
-        no-repeat center;
-        background-size: 100% auto;
-        width: calc(100% - 24px);
-        min-height: 200px;
-        padding: 12px;
-    }
-
-    .aam-whatsapp-widget-head {
-        display: block;
-        position: relative;
-        background: #22776b;
-        color: #fff;
-        height: 35px;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        padding: 15px 10px;
-    }
-
-    .aam-whatsapp-widget-message {
-        display: block;
-        background: #fff;
-        border-radius: 4px;
-        padding: 7px 10px;
-        box-shadow: 0px 1px 3px 0 #00000024;
-    }
-    
-    .aam-whatsapp-widget-message::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0px;
-        height: 0px;
-        border: 11px solid transparent;
-        border-right-color: #ffffff;
-        transform: rotate(135deg);
-        top: 1px;
-        left: 7px;
-    }
-    
-    .aam-whatsapp-widget-message::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    .aam-whatsapp-widget-message-time {
-        display: inline-block;
-        position: relative;
-        float: right;
-        font-size: 13px;
-        color: #7f8d9a;
-        top: 5px;
-    }
-    
-    .aam-whatsapp-widget-logo {
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background: #fff;
-        overflow: hidden;
-    }
-    
-    .aam-whatsapp-widget-logo img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-    
-    .aam-whatsapp-widget-buttons-wrapper {
-        display: block;
-        /*height: 30px;*/
-        padding: 10px;
-
-    }
-    
-    .aam-whatsapp-widget-start-chat-btn {
-        display: block;
-        background: #47e675;
-        color: #fff;    
-        border-radius: 4px;
-        line-height: 35px;
-        font-size: 16px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        &:hover{
-            background:#3db961;
+            }
+            p{
+                color:$black_primary;
+                a{
+                    color:$purple-primary;
+                    text-decoration: none;
+                }
+            }
+        }
+        .form{
+            width:65vw;
+            position:relative;
+            z-index:888;
+            padding-left:4vw;
+            input, textarea{
+                width: 18.4vw;
+                font-size: 1rem;
+                height: 7vh;
+                margin: 1vw;
+                background: white;
+                color: #939199;
+                border-radius: 50px;
+                padding: 2px;
+                padding-left: 25px;
+                box-shadow: 1px 1px 10px 1px #b7b6b62e;
+                border: none;
+                @include media("<phone"){
+                    width: 70vw;
+                }
+                &:focus-visible{
+                    border:none;
+                    outline:none;
+                }
+            }
+            textarea{
+                padding-top:1rem
+            }
+            .Subject, .message{
+                width: 65%;
+                @include media(">phone", "<=tablet") {
+                    width:44vw;
+                 }
+                @include media("<tablet"){
+                    width: 70% ;
+                }
+            }
+            .message{
+                height:20vh;
+                border-radius:20px;
+            }
+            .btn{
+                @include btnBg();
+                color:white;
+                cursor:pointer;
+                padding-left: initial;
+            }
         }
     }
-    a{
-        text-decoration:none;
+    .getInTouch{
+        &_title{
+            padding: 0vh 0 6vh 12vw;
+        }
+        &__dots{
+            top:40px;
+        }
     }
-    .aam-whatsapp-widget-start-chat-btn svg {
-        width: 20px;
-        height: 20px;
-        margin: 0px 5px -4px;
-    }
-    .aam-whatsapp-widget-logo-wrapper {
-        display: inline-block;
-        position: relative;
-    }
-    .aam-whatsapp-widget-logo-wrapper::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #4ad506;
-        bottom: 3px;
-        right: 0px;
-        box-shadow: 0 0 2px 1px #00000026;
-    }
+    
 }
