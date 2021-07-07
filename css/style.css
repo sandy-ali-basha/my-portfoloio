@@ -1756,6 +1756,13 @@ header section .hero-cube-2 .hero-picture-2 {
   left: -20px;
 }
 
+@media (min-width: 1366px) {
+  .skills .circle {
+    top: -141px;
+    left: -14px;
+  }
+}
+
 @media (max-width: 900px) {
   .skills .circle {
     display: none;

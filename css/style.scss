@@ -678,6 +678,10 @@ header{
         z-index: 55;
         top: -134px;
         left: -20px;
+        @include media(">=desktop"){
+            top: -141px;
+    left: -14px;
+        }
         @include media("<=tablet") { 
             display: none;
         }

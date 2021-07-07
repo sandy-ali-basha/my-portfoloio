@@ -35,7 +35,7 @@ $(document).on("mousemove", function(e) {
     mouseY = e.clientY;
 });
 // yellow circle
-$(".link").on("mouseenter", function() {
+$(".link ,.sotialLink").on("mouseenter", function() {
     cursor.addClass("active");
     follower.addClass("active");
 });
@@ -48,7 +48,7 @@ $("html").on("click", function() {
  }, 400);
 
 });
-$(".link").on("mouseleave", function() {
+$(".link, .sotialLink").on("mouseleave", function() {
     cursor.removeClass("active");
     follower.removeClass("active");
 });
