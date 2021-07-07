@@ -1,14 +1,4 @@
 @font-face {
-  font-family: "Bigilla";
-  src: local("Bigilla"), url(../font/Bigilla.21f3aec8.otf) format("otf");
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy"), url(../font/Gilroy-ExtraBold.0f6e082f.otf) format("otf");
-}
-
-@font-face {
   font-family: "rubik";
   src: local("Gilroy"), url(../font/Rubik-Black.ttf) format("ttf");
 }

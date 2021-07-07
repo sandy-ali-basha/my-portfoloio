@@ -50,8 +50,6 @@
     pointer-events: none;
     z-index: 10000;
     transform: translate(2px, 2px);
-    //overflow: hidden;
-    
     &.active {
         opacity: 1;
         transform: scale(3);
@@ -78,8 +76,6 @@
 
 .heyIcon{
     &::before{
-        // background-repeat: no-repeat;
-        // background-image: url(../img/color-palette.svg);
         background-size: 80px;
         display: inline-block;
         width: 80px;
