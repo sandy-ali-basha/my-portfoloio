@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Sandy</title>
-    <link rel="shortcut icon" href="img/cursor.gif"/>
+    <link rel="shortcut icon" href="img/id-card.svg"/>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -120,15 +120,15 @@
       </div>
     </section>
     <!-- hey end -->
-    <section class="mywork" id="myWork">
+    <section class="mywork">
       <img src="img/stripes.svg" alt="" class="strips" />
       <div class="project box">
-        <h3 class="h3">I am a photographer to</h3>
+        <h3 class="h3">power point Presentations</h3>
         <p class="p">
-          Take a look at my instagram 
+          i can make a professional power point Presentations for your next event.
         </p>
         <button class="btn link">
-          <a target="blank" href="https://www.instagram.com/sandyalibasha/">check out here</a>
+          <a href="#myWork">check out here</a>
         </button>
       </div>
       <div class="cv box">
@@ -293,7 +293,7 @@
 
     </section>
     <!-- skills end -->
-    <section class="experince">
+    <section class="experince" >
       <div class="circle"></div>
       <div class="recentWork__dots" style="top:21vh;"><img class="recentWork__dots-img" src="img/dots-menu.svg" alt=""></div>
       <h1 class="recentWork__title">Experince</h1>
@@ -341,27 +341,27 @@
           <div class="element">
             <h5 class="element-title">
               <img src="img/portfolio (1).svg">
-              <span>2019 - 2020</span></h5>
-            <div class="border">
-              <h4>Secretary</h4>
-              <p> Secretary and IT at arabic academy for E Busnis</p>
-            </div>
-          </div>
-          <div class="element">
-            <h5 class="element-title">
-              <img src="img/portfolio (1).svg">
               <span>2020 - 2021</span></h5>
             <div class="border">
               <h4>Presentation Specialist</h4>
               <p>power point Presentation Specialist at slidy </p>
             </div>
           </div>
+            <div class="element">
+              <h5 class="element-title">
+                <img src="img/portfolio (1).svg">
+                <span>2019 - 2020</span></h5>
+              <div class="border">
+                <h4>Secretary</h4>
+                <p> Secretary and IT at arabic academy for E Busnis</p>
+              </div>
+            </div>
           
         </div>
       </div>
     </section>
     <!-- experince end -->
-    <section class="recentWork">
+    <section class="recentWork"  id="myWork">
       <div class="shape-img-div">
         <img src="img/Asset 2.svg" alt="" class="shape-img">
       </div>
@@ -379,8 +379,7 @@
         <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
         <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
       </div>
-      <div class="showMoreDiv">  <button class="showMore link">show more</button></div>
-
+      <div style="display:none;" class="showMoreDiv"><button class="showMore link">show more</button></div>
     </section>
     <!-- recent work end -->
 
@@ -418,14 +417,15 @@
         <h3>Let's talk about everything!</h3>
         <p>Dont like forms? Send me an <a target="blank" href="mailto:sandy.ali.basha@gmail.com">email</a>. 👋</p>
       </div>
-      <form class="form" action="mail.php">
+      <form class="form" method="post">
         <div>
           <input type="text" name="name" id="" placeholder="Your name">
           <input type="email" name="email" id="" placeholder="Email address">
         </div>
           <input class="Subject" type="text" name="" id="" placeHolder="Subject">
           <textarea class="message" type="text" name="message" id="" cols="20" rows="5" placeholder="message"></textarea>
-          <input class="btn link" type="submit" value="send Message">
+          <input class="btn link" type="button" value="Send Email" 
+          onclick="sendEmail()">
           </form>
     </div>
       
@@ -492,6 +492,24 @@
       })
     });
     </script>
+    <script src = "https://smtpjs.com/v3/smtp.js"> </script>
+    
+  <script type="text/javascript">
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "sandy.ali.basha@email_address.com",
+        Password: "Enter your password",
+        To: 'receiver@email_address.com',
+        From: "sender@email_address.com",
+        Subject: "Sending Email using javascript",
+        Body: "Well that was easy!!",
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
+    }
+  </script>
     <script src="js/cursor.js"></script>
     <script src="js/skills.js"></script>
   </body>

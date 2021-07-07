@@ -4,7 +4,7 @@ $i:10;
     margin: 0;
     padding:  0;
     font-family: 'Rubik', sans-serif;
-    cursor:none;    
+    // cursor:none;    
     transition:all .5s;    
 }
 html{
@@ -447,7 +447,7 @@ header{
 .mywork{
     display: flex;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 70vh;
     $width:400px;
     $height:400px;
     background:$ghost-color;
@@ -629,8 +629,8 @@ header{
       height:initial;
     }
     &__dots{
-        left:155px !important;
-        top:80px !important;
+        left: 151px !important;
+        top: 93px !important;
         @include media("<phone"){
             left:20px;
         }
@@ -761,7 +761,7 @@ header{
             box-shadow: 1px 5px 8px 4px #4700493a;
             margin:2vw;
             padding: 2vw;
-            height:60%;
+            height:50%;
             @include media("<phone") { 
                 width:88%;
              }
@@ -772,7 +772,7 @@ header{
             span{
                 color:$gray;
                 font-weight: 500;
-                padding-left:9px;
+                padding-left:22px;
 
             }
             .element-title{
@@ -788,7 +788,7 @@ header{
             }
             .border{
                 border-left:1.7px solid $purple-primary;
-                padding-left:2vw;
+                padding-left:3vw;
                 margin-left: 1vw;
                 padding-bottom: 1.4vw;
                 @include media("<phone"){
@@ -809,7 +809,7 @@ header{
             box-shadow: 1px 5px 8px 4px #4700493a;
             margin:2vw;
             padding:2vw;
-            height:60%;
+            height:50%;
             @include media("<phone") { 
                 width:88%;
              }
@@ -846,6 +846,7 @@ header{
     }
     .rec__dots{
         top:100px;
+        left: 122px;
     }
     &__title{
         padding: 8vh 0 9vh 5vw;
@@ -855,9 +856,10 @@ header{
         position:relative
     }
     &__dots{
-        position:relative;    z-index: 6;
+        position:relative;
+        z-index: 6;
         top: 14px;
-        left: 140px;
+        left: 133px;
         width: 30px;
         opacity: 20%;
 
@@ -888,16 +890,16 @@ header{
             }
         }
             :nth-child(1){
-                background: #fff url(../img/website-1.jpg) center center/contain no-repeat;
+                background: #fff url(../img/work01.png) center center/contain no-repeat;
             }
             :nth-child(2){
-                background: #fff url(../img/website-2.jpg) center center/contain no-repeat;
+                background: #fff url(../img/work02.png) center center/contain no-repeat;
             }
             :nth-child(3){
-                background: #fff url(../img/website-3.jpg) center center/contain no-repeat;
+                background: #fff url(../img/work03.png) center center/contain no-repeat;
             }
             :nth-child(4){
-                background: #fff url(../img/website-4.jpg) center center/contain no-repeat;
+                background: #fff url(../img/work04.png) center center/contain no-repeat;
             }
     }
     .showMoreDiv{
@@ -1017,7 +1019,8 @@ header{
             padding: 0vh 0 6vh 12vw;
         }
         &__dots{
-            top:40px;
+            top: 36px;
+            left: 136px;
         }
     }
     
