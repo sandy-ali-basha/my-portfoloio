@@ -651,6 +651,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Hammersmith One', sans-serif;
+  cursor: none;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
