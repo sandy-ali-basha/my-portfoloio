@@ -5,7 +5,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
         $name = strip_tags(trim($_POST["name"]));
-				$name = str_replace(array("\r","\n"),array(" "," "),$name);
+		$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $subject = isset($_POST["msg_subject"])?trim($_POST["msg_subject"]):"portfolio";
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         // $cont_subject = trim($_POST["subject"]);
