@@ -740,6 +740,10 @@ body {
           box-shadow: none !important;
 }
 
+.darkMode .recentWork_list li {
+  color: white;
+}
+
 .darkMode .sayHi input, .darkMode .sayHi textarea {
   background: #212121 !important;
   color: #FFF !important;
@@ -1970,6 +1974,32 @@ header section .hero-cube-2 .hero-picture-2 {
   overflow-x: hidden;
 }
 
+.recentWork_list {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.recentWork_list .liActive {
+  color: #9933ff;
+}
+
+.recentWork_list li {
+  padding-inline: 2rem;
+  list-style-type: none;
+  cursor: pointer;
+  color: gray;
+  border-radius: 20px;
+}
+
+.recentWork_list li:hover {
+  background-color: #d4d4d4;
+}
+
 .recentWork .rec_title {
   left: 6vw;
   top: 14px;
@@ -2033,7 +2063,7 @@ header section .hero-cube-2 .hero-picture-2 {
           box-shadow: 5px 5px 11px 0px #c5c5c5;
   margin: 1vw;
   border-radius: 10px;
-  background: #fff url(../img/work.png) center center/contain no-repeat;
+  background: #fff url(../img/work.png) center center/cover no-repeat;
 }
 
 @media (max-width: 449px) {
@@ -2044,20 +2074,40 @@ header section .hero-cube-2 .hero-picture-2 {
   }
 }
 
-.recentWork .works :nth-child(1) {
-  background: #fff url(../img/work01.png) center center/contain no-repeat;
-}
-
-.recentWork .works :nth-child(2) {
-  background: #fff url(../img/work02.png) center center/contain no-repeat;
+.recentWork .works :nth-child(6) {
+  background: #fff url(../img/work02.png) center center/cover no-repeat;
 }
 
 .recentWork .works :nth-child(3) {
-  background: #fff url(../img/work03.png) center center/contain no-repeat;
+  background: #fff url(../img/work03.png) center center/cover no-repeat;
 }
 
 .recentWork .works :nth-child(4) {
-  background: #fff url(../img/work04.png) center center/contain no-repeat;
+  background: #fff url(../img/work04.png) center center/cover no-repeat;
+}
+
+.recentWork .works :nth-child(5) {
+  background: #fff url(../img/work01.png) center center/cover no-repeat;
+}
+
+.recentWork .works .p-1 {
+  background: #fff url(../img/powerPoint01.png) center center/cover no-repeat !important;
+}
+
+.recentWork .works .p-2 {
+  background: #fff url(../img/powerPoint02.png) center center/cover no-repeat !important;
+}
+
+.recentWork .works .p-3 {
+  background: #fff url(../img/powerPoint03.png) center center/cover no-repeat !important;
+}
+
+.recentWork .works .p-4 {
+  background: #fff url(../img/work01.png) center center/cover no-repeat !important;
+}
+
+.recentWork .works .p-5 {
+  background: #fff url(../img/work01.png) center center/cover no-repeat !important;
 }
 
 .recentWork .showMoreDiv {
@@ -2133,7 +2183,7 @@ header section .hero-cube-2 .hero-picture-2 {
 
 .sayHi .container .text {
   width: 20vw;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 @media (min-width: 451px) and (max-width: 900px) {
@@ -2172,7 +2222,7 @@ header section .hero-cube-2 .hero-picture-2 {
 }
 
 .sayHi .container .form input, .sayHi .container .form textarea {
-  width: 18.4vw;
+  width: 17.4vw;
   font-size: 1rem;
   height: 7vh;
   margin: 1vw;
@@ -2201,18 +2251,18 @@ header section .hero-cube-2 .hero-picture-2 {
   padding-top: 1rem;
 }
 
-.sayHi .container .form .Subject, .sayHi .container .form .message {
+.sayHi .container .form .subject, .sayHi .container .form .message {
   width: 65%;
 }
 
 @media (min-width: 451px) and (max-width: 900px) {
-  .sayHi .container .form .Subject, .sayHi .container .form .message {
+  .sayHi .container .form .subject, .sayHi .container .form .message {
     width: 44vw;
   }
 }
 
 @media (max-width: 899px) {
-  .sayHi .container .form .Subject, .sayHi .container .form .message {
+  .sayHi .container .form .subject, .sayHi .container .form .message {
     width: 70%;
   }
 }

@@ -11,7 +11,6 @@ $i:10;
 html{
     scroll-behavior: smooth;
     overflow-x:hidden;
-
 }
 body{
     overflow-x: hidden;
@@ -81,6 +80,13 @@ body{
         .work{
             box-shadow:none !important;
         }
+    &_list{
+        li{
+            color:white;
+        }
+        
+    }
+
     }
     .sayHi{
         input, textarea{
@@ -837,6 +843,25 @@ header{
     background-color: $ghost-color;
     position: relative;
     overflow-x: hidden;
+    &_list{
+        display:inline-flex;
+        justify-content: flex-start;
+        width:100%;
+            .liActive{
+                color:$purple-primary;
+            }
+        li{
+            padding-inline:2rem;
+            list-style-type: none;
+            cursor:pointer;
+            color:gray;
+            border-radius:20px;
+            &:hover{
+                background-color: rgb(212, 212, 212);
+
+            }
+        }
+    }
     .rec_title{
         left: 6vw;
         top: 14px;
@@ -883,25 +908,40 @@ header{
             box-shadow: 5px 5px 11px 0px #c5c5c5;
             margin: 1vw;
             border-radius: 10px ;
-            background: #fff url(../img/work.png) center center/contain no-repeat;
+            background: #fff url(../img/work.png) center center/cover no-repeat;
             @include media("<phone"){
             width:80vw;
             height:80vw;
             margin-block:2rem;
             }
         }
-            :nth-child(1){
-                background: #fff url(../img/work01.png) center center/contain no-repeat;
-            }
-            :nth-child(2){
-                background: #fff url(../img/work02.png) center center/contain no-repeat;
-            }
-            :nth-child(3){
-                background: #fff url(../img/work03.png) center center/contain no-repeat;
-            }
-            :nth-child(4){
-                background: #fff url(../img/work04.png) center center/contain no-repeat;
-            }
+        :nth-child(6){
+            background: #fff url(../img/work02.png) center center/cover no-repeat;
+        }
+        :nth-child(3){
+            background: #fff url(../img/work03.png) center center/cover no-repeat;
+        }
+        :nth-child(4){
+            background: #fff url(../img/work04.png) center center/cover no-repeat;
+        }
+        :nth-child(5){
+            background: #fff url(../img/work01.png) center center/cover no-repeat;
+        }
+        .p-1{
+            background: #fff url(../img/powerPoint01.png) center center/cover no-repeat !important;
+        }
+        .p-2{
+            background: #fff url(../img/powerPoint02.png) center center/cover no-repeat !important;
+        }
+        .p-3{
+            background: #fff url(../img/powerPoint03.png) center center/cover no-repeat !important;
+        }
+        .p-4{
+            background: #fff url(../img/work01.png) center center/cover no-repeat !important;
+        }
+        .p-5{
+            background: #fff url(../img/work01.png) center center/cover no-repeat !important;
+        }
     }
     .showMoreDiv{
         display:flex;
@@ -944,7 +984,7 @@ header{
         }
         .text{
             width:20vw;
-            padding-top:3rem;
+            padding-top:1rem;
             @include media(">phone", "<=tablet") {
                 width: 40vw;
              }
@@ -972,7 +1012,7 @@ header{
             z-index:888;
             padding-left:4vw;
             input, textarea{
-                width: 18.4vw;
+                width: 17.4vw;
                 font-size: 1rem;
                 height: 7vh;
                 margin: 1vw;
@@ -994,7 +1034,7 @@ header{
             textarea{
                 padding-top:1rem
             }
-            .Subject, .message{
+            .subject, .message{
                 width: 65%;
                 @include media(">phone", "<=tablet") {
                     width:44vw;
