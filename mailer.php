@@ -6,10 +6,17 @@
         // Get the form fields and remove whitespace.
         $name = strip_tags(trim($_POST["name"]));
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
+<<<<<<< HEAD
         $subject = isset($_POST["msg_subject"])?trim($_POST["msg_subject"]):"portfolio";
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         // $cont_subject = trim($_POST["subject"]);
         // $budget = trim($_POST["budget"]);
+=======
+        $subject = trim($_POST["msg_subject"]);
+        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        // $cont_subject = trim($_POST["subject"]);
+        $budget = trim($_POST["budget"]);
+>>>>>>> f670530f71c7d78f118b206e16fd63a07054099c
         $message = trim($_POST["message"]);
 
         // Check that data was sent to the mailer.
@@ -30,7 +37,11 @@
         // Build the email content.
         $email_content = "Name: $name\n";
         $email_content .= "Email: $email\n\n";
+<<<<<<< HEAD
         // $email_content .= "budget: $budget\n\n";
+=======
+        $email_content .= "budget: $budget\n\n";
+>>>>>>> f670530f71c7d78f118b206e16fd63a07054099c
         // $email_content .= "Subject: $cont_subject\n";
         $email_content .= "Message:\n$message\n";
 
