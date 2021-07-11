@@ -21,10 +21,7 @@
     <div class="cursor-follower"></div>
     
     <header class="nav" id="Nav">
-      
-
       <section>
-
       <nav>
         <a target="blank" href="index.html">
           <div class="logo"><div>SANDY</div></div>
@@ -43,7 +40,7 @@
       <div class="title">
         <div class="header-text">
           <h2>Hi!</h2>
-          <h6 style="color:#9933ff">I'm sandy</h6>
+          <h6 style="color:#9933ff" translate="no">I'm sandy</h6>
           <h4>Front end developer</h4>
         </div>
         </h2>
@@ -368,17 +365,21 @@
       <div class="recentWork__dots rec__dots"><img class="recentWork__dots-img" src="img/dots-menu.svg" alt=""></div>
       <h1 class="recentWork__title rec_title">Recent Work</h1>
       <div class="works">
-        <a target="blank" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-        <a target="blank" style="display:none;" class="work" href="http://" target="_blank" rel="noopener noreferrer"></a>
-      </div>
+        <ul class="recentWork_list">
+          <li class="websites liActive">websites</li>
+          <li class="powerPoint">power point</li>
+        </ul>
+        <a target="blank" class="work web" href="" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" class="work web" href="" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" class="work web" href="" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" class="work web" href="hhttp://tracker.aldrtest.sy" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" class="work web" href="https://aldrtech.sy/" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" style="display:none;" class="work power p-1" href="حلقة بحث الأردوينو.ppsx" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" style="display:none;" class="work power p-2" href="منصة مشاهير.ppsx" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" style="display:none;" class="work power p-3" href="RAMAS.ppsx" target="_blank" rel="noopener noreferrer"></a>
+        <a target="blank" style="display:none;" class="work power p-4" href="برنامج الامنعينة.ppsx" target="_blank" rel="noopener noreferrer"></a>
+        <!-- <a target="blank" style="display:none;" class="work power p-5" href="http://" target="_blank" rel="noopener noreferrer"></a> -->
+      </div> 
       <div style="display:none;" class="showMoreDiv"><button class="showMore link">show more</button></div>
     </section>
     <!-- recent work end -->
@@ -436,7 +437,7 @@
                 <stop offset="0%" style="stop-color:#99ccff;stop-opacity:1"/>
                 <stop offset="100%" style="stop-color:#9999ff;stop-opacity:1"/>
             </linearGradient>
-        </defs>
+        </defs>127
           <path class="path-1" fill="url(#grad1)" d="M 0 29 C 192 29 192 90 384 90 L 384 90 L 384 0 L 0 0 Z" stroke-width="0"></path> 
           <path class="path-2" fill="url(#grad1)" d="M 383 90 C 571 90 571 135 759 135 L 759 135 L 759 0 L 383 0 Z" stroke-width="0"></path>
           <path class="path-3" fill="url(#grad1)" d="M 758 135 C 917 135 917 119 1076 119 L 1076 119 L 1076 0 L 758 0 Z" stroke-width="0"></path>
@@ -461,11 +462,10 @@
         </path>
       </svg>  
     </section>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/CSSRulePlugin.min.js"></script>
-    <script src="js/script.js"></script>
     <script>
       $(document).ready(function () {
         $(".btn").hover(function () {
@@ -481,16 +481,29 @@
         console.log("loader");
         preloader.fadeOut(preloaderFadeOutTime);
       }
-      hidePreloader();
+        hidePreloader();
       $(".showMore").click(function(){
         $(".work").slideDown();
       });
       $(".work").hover(function(){
         $(this).toggleClass("float");   
-      })
-    });
+      });
+      $(".powerPoint").click(function(){
+        $('.web').hide();
+        $('.power').show();
+        $(".powerPoint").addClass("liActive");
+        $(".websites").removeClass("liActive");
+      });
+      $(".websites").click(function(){
+        $('.power').hide();
+        $('.web').show();
+        $(".websites").addClass("liActive");
+        $(".powerPoint").removeClass("liActive");
+      });
+  });
     </script>
 
+    <script src="js/script.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/skills.js"></script>
   </body>
