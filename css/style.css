@@ -674,7 +674,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #d2d0d6;
+  background-color: #9966ff;
   border-radius: 2px;
 }
 
@@ -688,7 +688,7 @@ body {
 }
 
 .darkMode header h1, .darkMode .hey h1, .darkMode .mywork h1, .darkMode .skills h1, .darkMode .experince h1, .darkMode .recentWork h1, .darkMode .sayHi h1 {
-  color: #99ffff;
+  color: #99ccff;
 }
 
 .darkMode .header_motion svg {
@@ -712,7 +712,7 @@ body {
 }
 
 .darkMode .box p {
-  color: #99ffff !important;
+  color: #99ccff !important;
 }
 
 .darkMode .cursor {
@@ -783,7 +783,7 @@ body {
 }
 
 .darkMode .sayHi .btn {
-  background: #99ffff !important;
+  background: #99ccff !important;
   color: #18191a !important;
 }
 
