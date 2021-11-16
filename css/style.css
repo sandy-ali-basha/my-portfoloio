@@ -650,10 +650,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Hammersmith One', sans-serif;
+  font-family: "Hammersmith One", sans-serif;
   cursor: none;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 html {
@@ -682,12 +682,24 @@ body {
   background-color: #18191a !important;
 }
 
-.darkMode header, .darkMode .hey, .darkMode .mywork, .darkMode .skills, .darkMode .experince, .darkMode .recentWork, .darkMode .sayHi {
+.darkMode header,
+.darkMode .hey,
+.darkMode .mywork,
+.darkMode .skills,
+.darkMode .experince,
+.darkMode .recentWork,
+.darkMode .sayHi {
   background: #18191a;
   color: #FFF;
 }
 
-.darkMode header h1, .darkMode .hey h1, .darkMode .mywork h1, .darkMode .skills h1, .darkMode .experince h1, .darkMode .recentWork h1, .darkMode .sayHi h1 {
+.darkMode header h1,
+.darkMode .hey h1,
+.darkMode .mywork h1,
+.darkMode .skills h1,
+.darkMode .experince h1,
+.darkMode .recentWork h1,
+.darkMode .sayHi h1 {
   color: #99ccff;
 }
 
@@ -724,15 +736,20 @@ body {
   background: transparent;
 }
 
-.darkMode .degrees, .darkMode .jobs {
+.darkMode .degrees,
+.darkMode .jobs {
   background-color: #3D3D3D !important;
 }
 
-.darkMode .degrees h5, .darkMode .degrees h4, .darkMode .jobs h5, .darkMode .jobs h4 {
+.darkMode .degrees h5,
+.darkMode .degrees h4,
+.darkMode .jobs h5,
+.darkMode .jobs h4 {
   color: #FFF;
 }
 
-.darkMode .degrees p, .darkMode .jobs p {
+.darkMode .degrees p,
+.darkMode .jobs p {
   color: #99ffff !important;
 }
 
@@ -745,40 +762,46 @@ body {
   color: white;
 }
 
-.darkMode .sayHi input, .darkMode .sayHi textarea {
+.darkMode .sayHi input,
+.darkMode .sayHi textarea {
   background: #212121 !important;
   color: #FFF !important;
 }
 
-.darkMode .sayHi input::-webkit-input-placeholder, .darkMode .sayHi textarea::-webkit-input-placeholder {
+.darkMode .sayHi input::-webkit-input-placeholder,
+.darkMode .sayHi textarea::-webkit-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #FFF;
   opacity: 1;
   /* Firefox */
 }
 
-.darkMode .sayHi input:-ms-input-placeholder, .darkMode .sayHi textarea:-ms-input-placeholder {
+.darkMode .sayHi input:-ms-input-placeholder,
+.darkMode .sayHi textarea:-ms-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #FFF;
   opacity: 1;
   /* Firefox */
 }
 
-.darkMode .sayHi input::-ms-input-placeholder, .darkMode .sayHi textarea::-ms-input-placeholder {
+.darkMode .sayHi input::-ms-input-placeholder,
+.darkMode .sayHi textarea::-ms-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #FFF;
   opacity: 1;
   /* Firefox */
 }
 
-.darkMode .sayHi input::placeholder, .darkMode .sayHi textarea::placeholder {
+.darkMode .sayHi input::placeholder,
+.darkMode .sayHi textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #FFF;
   opacity: 1;
   /* Firefox */
 }
 
-.darkMode .sayHi h3, .darkMode .sayHi p {
+.darkMode .sayHi h3,
+.darkMode .sayHi p {
   color: #FFF !important;
 }
 
@@ -980,8 +1003,8 @@ header section nav .menu {
 
 header section nav .menu a {
   margin-right: 10px;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 header section nav .menu a:hover {
@@ -1123,7 +1146,7 @@ header section .title .big-stripes {
   z-index: 0;
   right: 0px;
   bottom: 0px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 header section .hero-cube {
@@ -1133,8 +1156,8 @@ header section .hero-cube {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   z-index: 0;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 header section .hero-cube .hero-picture {
@@ -2222,7 +2245,8 @@ header section .hero-cube-2 .hero-picture-2 {
   padding-left: 4vw;
 }
 
-.sayHi .container .form input, .sayHi .container .form textarea {
+.sayHi .container .form input,
+.sayHi .container .form textarea {
   width: 17.4vw;
   font-size: 1rem;
   height: 7vh;
@@ -2238,12 +2262,14 @@ header section .hero-cube-2 .hero-picture-2 {
 }
 
 @media (max-width: 449px) {
-  .sayHi .container .form input, .sayHi .container .form textarea {
+  .sayHi .container .form input,
+  .sayHi .container .form textarea {
     width: 70vw;
   }
 }
 
-.sayHi .container .form input:focus-visible, .sayHi .container .form textarea:focus-visible {
+.sayHi .container .form input:focus-visible,
+.sayHi .container .form textarea:focus-visible {
   border: none;
   outline: none;
 }
@@ -2252,18 +2278,21 @@ header section .hero-cube-2 .hero-picture-2 {
   padding-top: 1rem;
 }
 
-.sayHi .container .form .subject, .sayHi .container .form .message {
+.sayHi .container .form .subject,
+.sayHi .container .form .message {
   width: 65%;
 }
 
 @media (min-width: 451px) and (max-width: 900px) {
-  .sayHi .container .form .subject, .sayHi .container .form .message {
+  .sayHi .container .form .subject,
+  .sayHi .container .form .message {
     width: 44vw;
   }
 }
 
 @media (max-width: 899px) {
-  .sayHi .container .form .subject, .sayHi .container .form .message {
+  .sayHi .container .form .subject,
+  .sayHi .container .form .message {
     width: 70%;
   }
 }
