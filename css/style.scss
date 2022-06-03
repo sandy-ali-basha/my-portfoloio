@@ -5,7 +5,7 @@ $i: 10;
   margin: 0;
   padding: 0;
   font-family: "Hammersmith One", sans-serif;
-  cursor: none;
+  // cursor: none;
   transition: all 0.5s;
 }
 html {
@@ -716,15 +716,32 @@ header {
     .skills-img {
       width: 8vw;
       transition: all 1s;
+
       &:hover {
         filter: drop-shadow(0px 19px 14px #1532481f);
         transform: translatey(-20px);
+        animation: infinite;
       }
       @include media("<phone") {
         width: 100%;
       }
     }
   }
+  @keyframes floating {
+    0% {
+      filter: drop-shadow(0px 19px 4px #1532481f);
+      transform: translatey(0px);
+    }
+    50% {
+      filter: drop-shadow(0px 19px 14px #1532481f);
+      transform: translatey(-20px);
+    }
+    100% {
+      filter: drop-shadow(0px 19px 4px #1532481f);
+      transform: translatey(0px);
+    }
+  }
+
   .circle {
     position: relative;
     z-index: 55;
@@ -953,25 +970,22 @@ header {
       box-shadow: 5px 5px 11px 0px #c5c5c5;
       margin: 1vw;
       border-radius: 10px;
-      background: #fff url(../img/work.png) center center/cover no-repeat;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+      img {
+        object-fit: cover;
+        width: 23vw;
+        height: 23vw;
+      }
       @include media("<phone") {
         width: 80vw;
         height: 80vw;
         margin-block: 2rem;
       }
     }
-    :nth-child(6) {
-      background: #fff url(../img/work02.png) center center/cover no-repeat;
-    }
-    :nth-child(3) {
-      background: #fff url(../img/work03.png) center center/cover no-repeat;
-    }
-    :nth-child(4) {
-      background: #fff url(../img/work04.png) center center/cover no-repeat;
-    }
-    :nth-child(5) {
-      background: #fff url(../img/work01.png) center center/cover no-repeat;
-    }
+
     .p-1 {
       background: #fff url(../img/powerPoint01.png) center center/cover
         no-repeat !important;
