@@ -976,8 +976,9 @@ header {
       }
       img {
         object-fit: cover;
-        width: 23vw;
-        height: 23vw;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
       }
       @include media("<phone") {
         width: 80vw;
