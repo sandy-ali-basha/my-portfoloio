@@ -441,9 +441,11 @@ header {
     padding: 2vw;
     display: flex;
     align-items: flex-start;
+    width: 50vw;
     flex-direction: column;
     @include media("<phone") {
       align-items: center;
+      width: 100vw;
     }
     h1 {
       padding-bottom: 20px;
@@ -877,10 +879,7 @@ header {
       box-shadow: 1px 5px 8px 4px #4700493a;
       margin: 2vw;
       padding: 2vw;
-      height: 50%;
-      @include media("<phone") {
-        width: 88%;
-      }
+      height: fit-content;
     }
   }
 }
