@@ -880,6 +880,9 @@ header {
       margin: 2vw;
       padding: 2vw;
       height: fit-content;
+      @include media("<phone") {
+        width: 88%;
+      }
     }
   }
 }
@@ -1071,6 +1074,9 @@ header {
       position: relative;
       z-index: 888;
       padding-left: 4vw;
+      @include media("<tablet") {
+        width: 100vw;
+      }
       input,
       textarea {
         width: 17.4vw;

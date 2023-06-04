@@ -1400,6 +1400,11 @@ header section .hero-cube-2 .hero-picture-2 {
   height: -moz-fit-content;
   height: fit-content;
 }
+@media (max-width: 449px) {
+  .experince .boxes .jobs {
+    width: 88%;
+  }
+}
 
 .shape-img-div {
   position: absolute;
@@ -1607,6 +1612,11 @@ header section .hero-cube-2 .hero-picture-2 {
   position: relative;
   z-index: 888;
   padding-left: 4vw;
+}
+@media (max-width: 899px) {
+  .sayHi .container .form {
+    width: 100vw;
+  }
 }
 .sayHi .container .form input,
 .sayHi .container .form textarea {
